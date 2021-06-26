@@ -1,24 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter , Route , Switch } from 'react-router-dom';
+
+import Home from './paginas/Home';
+import Servicos from './paginas/Servicos';
+import DetalheProduto from './paginas/Produtos/DetalheProduto';
+import DetalheServico from './paginas/Servicos/DetalheServico';
+import Navbar from './Componentes/NavBar';
+import Produtos from './paginas/Produtos';
+import Cadastro from './paginas/Cadastro';
+import Login from './paginas/Login';
+import Pagina404 from './paginas/404';
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Navbar />
+    <Switch>
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Route exact path="/servicos">
+      <Servicos />
+    </Route>
+    <Route path="/servicos/:id">
+      <DetalheServico />
+    </Route>
+    <Route exact path="/produtos">
+      <Produtos />
+    </Route>
+    <Route path="/produtos/:id">
+      <DetalheProduto />
+    </Route>
+    <Route path="/cadastro">
+      <Cadastro />
+    </Route>
+    <Route path="/login">
+      <Login />
+    </Route>
+    <Route>
+      <Pagina404 />
+    </Route>
+    </Switch>
+    </BrowserRouter>
+    
   );
 }
 
