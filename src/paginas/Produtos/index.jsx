@@ -1,7 +1,6 @@
 import http from "../../HTTP";
 import { useEffect, useState } from "react";
 import CardProduto from '../../Componentes/CardProdutos'
-import './estilos.css'
 
 const Produtos  = () => {
    

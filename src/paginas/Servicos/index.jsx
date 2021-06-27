@@ -1,6 +1,5 @@
 import { useState , useEffect } from "react";
 import http from "../../HTTP";
-import './estilos.css'
 import CardServico from "../../Componentes/CardServicos";
 
 const Servicos = () => {
